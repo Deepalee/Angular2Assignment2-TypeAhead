@@ -1,0 +1,15 @@
+<div class="container">
+  <br>
+  <div>
+    <label for="country">Country : </label>
+    <input id="country" type="text" class="validate filter-input" [(ngModel)]=query (keyup)=filter()>
+  </div>
+
+  <div *ngIf="filteredCountryList.length > 0">
+    <ul class="country-list">
+      <li *ngFor="let country of filteredCountryList">
+        <a (click)="select(country)">{{country}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
